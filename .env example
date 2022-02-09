@@ -1,0 +1,8 @@
+PORT=3001
+SECRET_KEY=someRandomHex
+
+DB_USER=postgres
+DB_PASSWORD=3333
+DB_DATABASE=binar
+DB_HOST=localhost
+DB_PORT=5432
