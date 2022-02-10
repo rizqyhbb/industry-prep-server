@@ -64,7 +64,6 @@ class UserService {
         throw new Error(ERRORS.USER_DOES_NOT_EXIST)
       }
 
-      console.log(findEmail.rows)
       const comparingPassword = comparePassword(password, findEmail.rows[0].password)
       if (!comparingPassword) {
         throw new Error(ERRORS.PASSWORD_MISMATCH)
