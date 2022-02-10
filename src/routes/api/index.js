@@ -5,6 +5,7 @@ const API_ROUTES = {
   LOGIN: '/login',
   USER_BY_ID: '/user/:id',
   TASK: '/task',
+  TASK_BY_ID: '/task/:id'
 }
 
 module.exports = API_ROUTES;

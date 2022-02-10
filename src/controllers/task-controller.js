@@ -26,6 +26,19 @@ class TaskController {
       return res.status(error.code).json(error.message)
     }
   }
+
+  static updateTask = async (req, res) => {
+    try {
+      const { id } = req.params
+      const { complete } = req.body
+      await TaskService.updateTask({ id, complete })
+      return res.status(200).json("task updated")
+    } catch (err) {
+      const error = getError(err)
+      console.log(error);
+      return res.status(error.code).json(error.message)
+    }
+  }
 }
 
 module.exports = TaskController;

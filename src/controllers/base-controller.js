@@ -21,6 +21,10 @@ class BaseController {
         code: 400,
         message: 'User Does Not Exist'
       }
+      case ERRORS.TASK_NOT_FOUND: return {
+        code: 400,
+        message: "Task Not Found"
+      }
       case ERRORS.PASSWORD_MISMATCH: return {
         code: 400,
         message: 'Password Mismatch'

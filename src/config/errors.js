@@ -8,6 +8,7 @@ const ERRORS = {
   UNAUTHORIZED: 'unauthorized',
   FORBIDDEN: 'forbidden',
   NOT_FOUND: 'not found',
+  TASK_NOT_FOUND: 'task not found',
 }
 
 module.exports = ERRORS

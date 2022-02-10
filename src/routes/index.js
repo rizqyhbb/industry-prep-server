@@ -2,6 +2,7 @@ const { Router } = require('express');
 const UserController = require('../controllers/user-controller');
 const TaskController = require('../controllers/task-controller');
 const authentication = require('../middlewares/authentication')
+const authorization = require('../middlewares/authorization')
 const API_ROUTES = require('./api/index')
 
 const router = Router();
@@ -14,7 +15,6 @@ router.post(API_ROUTES.LOGIN, UserController.login);
 router.use(authentication);
 router.get(API_ROUTES.TASK, TaskController.getAllTask);
 router.post(API_ROUTES.TASK, TaskController.addTask);
-
+router.put(API_ROUTES.TASK_BY_ID, [authorization], TaskController.updateTask)
 
 module.exports = router;
-

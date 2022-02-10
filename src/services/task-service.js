@@ -1,5 +1,6 @@
 const pool = require('../config/db');
-const { getTaskByFk, addTask } = require('../controllers/query-controller');
+const ERRORS = require('../config/errors');
+const { getTaskByFk, getTaskById, addTask, updateTask } = require('../controllers/query-controller');
 const { isEmpty } = require('../utils/validator')
 
 class TaskService {
@@ -21,7 +22,15 @@ class TaskService {
       return
     } catch (err) {
       throw err
+    }
+  }
 
+  static updateTask = async ({ id, complete }) => {
+    try {
+      await pool.query(updateTask, [complete, id])
+      return
+    } catch (err) {
+      throw new Error(ERRORS.INTERNAL_SERVER_ERROR)
     }
   }
 }
