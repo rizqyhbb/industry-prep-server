@@ -29,7 +29,7 @@ class UserController {
     try {
       const { username, email, password } = req.body
       await UserService.addUser({ username, email, password })
-      return res.status(200).json("user created")
+      return res.status(200).json({ message: "user created" })
     } catch (err) {
       const error = getError(err)
       console.log(error)
