@@ -9,7 +9,7 @@ class UserController {
     } catch (err) {
       const error = getError(err)
       console.log(error)
-      return res.status(error.code).json(error.message)
+      return res.status(error.code).json({ message: error.message })
     }
   }
 
@@ -21,7 +21,7 @@ class UserController {
     } catch (err) {
       const error = getError(err)
       console.log(error)
-      return res.status(error.code).json(error.message);
+      return res.status(error.code).json({ message: error.message });
     }
   }
 
@@ -33,7 +33,7 @@ class UserController {
     } catch (err) {
       const error = getError(err)
       console.log(error)
-      return res.status(error.code).json(error.message)
+      return res.status(error.code).json({ message: error.message })
     }
   }
 
@@ -45,7 +45,7 @@ class UserController {
     } catch (err) {
       const error = getError(err)
       console.log(error)
-      return res.status(error.code).json(error.message)
+      return res.status(error.code).json({ message: error.message })
     }
   }
 }
