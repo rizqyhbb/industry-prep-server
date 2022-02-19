@@ -41,7 +41,7 @@ class UserController {
     try {
       const { email, password } = req.body;
       const authenticate = await UserService.authenticate({ email, password })
-      return res.status(200).json(authenticate)
+      return res.status(200).json({ token: authenticate })
     } catch (err) {
       const error = getError(err)
       console.log(error)

@@ -7,7 +7,8 @@ class TaskService {
   static getAllTask = async (id) => {
     try {
       const response = await pool.query(getTaskByFk, [id]);
-      return response.rows
+      const sorting = response.rows.sort((a, b) => (a.id > b.id) ? 1 : -1)
+      return sorting
     } catch (err) {
       throw new err
     }
