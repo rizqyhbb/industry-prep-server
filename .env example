@@ -2,7 +2,9 @@ PORT=3001
 SECRET_KEY=someRandomHex
 
 DB_USER=postgres
-DB_PASSWORD=3333
-DB_DATABASE=binar
+DB_PASSWORD=password
+DB_DATABASE=database_name
 DB_HOST=localhost
 DB_PORT=5432
+
+DATABASE_URL= // will get from heroku
