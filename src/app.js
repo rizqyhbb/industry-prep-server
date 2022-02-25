@@ -8,18 +8,19 @@ const PORT = process.env.PORT
 
 // app.use(cors())
 let whiteList = ['http://localhost:3000']
-let corsOption = {
-  origin: (origin, callback) => {
-    if (whiteList.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }  
+let corsOptionsDelegate = function (req, callback) {
+  let corsOptions;
+  if (whiteList.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true }
+  } else {
+    corsOptions = { origin: false }
+  }
+  callback(null, corsOptions)
 }
 
+
 app.use(express.json())
-app.use('/api/v1', cors(corsOption),apiRoutes)
+app.use('/api/v1', cors(corsOptionsDelegate), apiRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server runninh on port ${PORT}`)
