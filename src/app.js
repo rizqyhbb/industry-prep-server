@@ -19,13 +19,11 @@ const PORT = process.env.PORT
 // }
 
 const corsOption = {
-  "origin": "http://localhost:3000",
+  "origin": "*",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "preflightContinue": false,
   "optionsSuccessStatus": 204
 }
-
-
 
 app.use(express.json())
 app.use('/api/v1', cors(corsOption), apiRoutes)
