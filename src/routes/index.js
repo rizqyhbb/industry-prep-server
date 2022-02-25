@@ -11,7 +11,7 @@ const router = Router();
 
 router.get(API_ROUTES.USER, UserController.getAllUser);
 
-append.use(access);
+router.use(access);
 router.get(API_ROUTES.USER_BY_ID, UserController.getUserById);
 router.post(API_ROUTES.REGISTER, UserController.addUser);
 router.post(API_ROUTES.LOGIN, UserController.login);
