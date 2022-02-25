@@ -3,11 +3,15 @@ const UserController = require('../controllers/user-controller');
 const TaskController = require('../controllers/task-controller');
 const authentication = require('../middlewares/authentication')
 const authorization = require('../middlewares/authorization')
-const API_ROUTES = require('./api/index')
+const API_ROUTES = require('./api/index');
+const { append } = require('express/lib/response');
+const access = require('../middlewares/cors');
 
 const router = Router();
 
 router.get(API_ROUTES.USER, UserController.getAllUser);
+
+append.use(access);
 router.get(API_ROUTES.USER_BY_ID, UserController.getUserById);
 router.post(API_ROUTES.REGISTER, UserController.addUser);
 router.post(API_ROUTES.LOGIN, UserController.login);
