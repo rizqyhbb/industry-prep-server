@@ -4,7 +4,6 @@ const TaskController = require('../controllers/task-controller');
 const authentication = require('../middlewares/authentication')
 const authorization = require('../middlewares/authorization')
 const API_ROUTES = require('./api/index');
-const access = require('../middlewares/cors');
 
 const router = Router();
 
