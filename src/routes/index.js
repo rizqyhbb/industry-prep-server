@@ -7,6 +7,10 @@ const API_ROUTES = require('./api/index');
 
 const router = Router();
 
+router.get(API_ROUTES.PING, (req, res) => {
+  return res.send("Ping!")
+})
+
 router.get(API_ROUTES.USER, UserController.getAllUser);
 router.get(API_ROUTES.USER_BY_ID, UserController.getUserById);
 router.post(API_ROUTES.REGISTER, UserController.addUser);

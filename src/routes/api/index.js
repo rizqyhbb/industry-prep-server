@@ -1,5 +1,6 @@
 const API_ROUTES = {
   ROOT: '/',
+  PING: '/ping',
   USER: '/user',
   REGISTER: '/register',
   LOGIN: '/login',
